@@ -1,0 +1,21 @@
+mixin tab(keys,values)
+  tbody
+    tr
+      for i in keys
+        th=i
+    for i in values
+      tr
+        for j in i
+          td=j
+
+doctype html
+block all
+    html
+      head
+        meta(charset="utf-8")
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src="/javascripts/jquery-3.3.1.js")
+
+      body
+        block content

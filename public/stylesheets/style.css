@@ -1,0 +1,41 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  color: #00B7FF;
+}
+
+div.content-header span{
+  font-size: large;
+  color: green;
+}
+.tb table {
+  width:100%;
+  margin:15px 0
+}
+.tb th {
+  background-color:#00BFFF;
+  color:#FFFFFF
+}
+.tb td{
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.tb td:hover{
+    border: 1px solid #202a7c;
+}
+.tb,.tb th,.tb td{
+  font-size:0.95em;
+  text-align:center;
+  padding:4px;
+  border:1px solid #6ddafe;
+  border-collapse:collapse
+}
+.tb tr:nth-child(odd){
+  background-color:#aae9fe;
+}
+.tb tr:nth-child(even){
+  background-color:#fdfdfd;
+}

@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    .head
+        h1= title
+        p Welcome to #{title}
+    .content
+        .content-header Login to #[span mysql]
+        ul
+            li
+                .text #[span.user ]
+                    input(type="text" placeholder="input username")
+            li
+                .text #[span.passwd ]
+                    input(type="password" placeholder="input password")
+
+            li
+                input(id="btn1" type="button" value="log in")
+    script(src="/javascripts/init.js")
