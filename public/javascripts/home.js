@@ -17,7 +17,7 @@ $(function () {
     }
 
     function bindClick(type_str) {
-        if(type_str==='data')
+        if (type_str === 'data')
             return;
         let tds = $('td');
         for (let i = 0; i < tds.length; i++) {
@@ -29,10 +29,33 @@ $(function () {
                         type: type_str,
                         name: innername
                     }
-                }).done(function(data){
-                  updateTable(data,type.next());
-                }).fail(function (xhr, status) {
+                }).done(function (_data) {
+                    let data = JSON.parse(_data);
+                    switch (data.status) {
+                        case 0:
+                            updateTable(data.data, type.next());
+                            break;
+                        case 1:
+                            alert('页面错误');
+                            break;
+                        case 2:
+                            alert('查询错误');
+                            break;
+                        case 3:
+                            alert('登录失效，请重新登陆');
+                            location.href = '/login';
+                            break;
+                        case 4:
+                            alert('没有权限访问');
+                            break;
+                        case 5:
+                            alert('登陆错误');
+                            break;
+                    }
 
+                }).fail(function (xhr, status) {
+                    console.log(`${xhr}----${status}`);
+                    alert('连接服务器失败');
                 })
             }
         }
