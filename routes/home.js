@@ -45,18 +45,21 @@ router.get('/',function(req,res,next){
         });
     }
     else{
-        if(conn) {
+        if(conn&&conn.status==='authenticated') {
             conn.end();
         }
         res.redirect('../login');
     }
 });
-router.post('/',function(req,res){
+router.post('/query',function(req,res){
     if(req.session.conf&&conn){
         let type=req.body.type;
         let name=req.body.name;
         let sqlState;
         switch (type){
+            case '':
+                sqlState='show databases';
+                break;
             case 'database':
                 conn.query(`use ${name};`);
                 sqlState='show tables;';
@@ -96,5 +99,16 @@ router.post('/',function(req,res){
     else{
         res.end(JSON.stringify(new TransData(3)));
     }
+});
+router.get('/logout',function (req,res){
+    if(req.session.conf&&conn){
+        delete req.session.conf;
+        conn.end();
+        res.writeHead(200);
+        res.end('')
+    }else{
+        res.end(JSON.stringify(new TransData(3)));
+    }
+
 });
 module.exports=router;

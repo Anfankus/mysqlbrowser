@@ -1,7 +1,8 @@
 extends layout
 block content
-    .logout
-        input(type='button' value='登出')
+    .functional
+        input(id='logout' type='button' value='登出')
+        input(id='previous' type='button' value='返回')
     .content
         table.tb
             + tab(keys,values)
