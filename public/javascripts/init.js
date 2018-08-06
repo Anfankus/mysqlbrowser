@@ -12,15 +12,12 @@ $(function () {
         $.ajax("/login", {
             method: 'post',
             data: {username: username, password: passwd}
-        }).done(function (_data) {
-            let data = JSON.parse(_data);
-            switch (data.status) {
-                case 0:
-                    location.href = 'home';
-                    break;
-                case 5:
-                    alert('登陆错误');
-                    break;
+        }).done(function (data) {
+            if (data === '') {
+                alert('登陆错误');
+            }
+            else {
+                location.href = 'home';
             }
         }).fail(function (xhr, status) {
             division.append('<p>连接失败</p>')

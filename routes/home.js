@@ -35,7 +35,7 @@ router.get('/',function(req,res,next){
             if(error) {
                 //connection.end();
                 console.log('sql 错误');
-                res.end(JSON.stringify(new TransData(2)));
+                res.end('');
                 return;
             }
             let Keys=[];
