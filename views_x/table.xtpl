@@ -1,0 +1,15 @@
+<tbody>
+    <tr>
+        {{#each(keys)}}
+            <th>{{this}}</th>
+        {{/each}}
+    </tr>
+
+    {{#each(values)}}
+    <tr>
+        {{#each(this)}}
+            <td>{{this}}</td>
+        {{/each}}
+    </tr>
+    {{/each}}
+</tbody>

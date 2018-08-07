@@ -20,7 +20,7 @@ function TransData(status, infoORdata) {
 }
 
 router.get('/', function (req, res, next) {
-    res.render('index.pug', {title: 'Mysql browser'});
+    res.render('index.xtpl', {title: 'Mysql browser'});
 });
 router.post('/', function (req, res) {
 
@@ -34,7 +34,7 @@ router.post('/', function (req, res) {
     connection.connect(function (err) {
         if (err) {
             if (err.errno === 1251||err.errno===1045) {
-                res.end(JSON.stringify(new TransData(5)));
+                res.end();
             }
             return;
         }
