@@ -21,7 +21,7 @@ function CreateType(){
     };
 }
 function updateTable(html,type) {
-    $('tbody').remove();
+    $('tbody,thead').remove();
     $('.tb').append(html);
     bindTableClick(type);
 }

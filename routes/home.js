@@ -13,7 +13,7 @@ function result2data(keys,values,results){
     for(let i of results){
         let temp=[];
         for(let j in i) {
-            if(flag) keys.push(j);
+            if(flag) keys.push(j.toUpperCase());
             temp.push(i[j]);
         }
         flag=false;

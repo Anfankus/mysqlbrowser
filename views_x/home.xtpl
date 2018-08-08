@@ -1,14 +1,15 @@
 {{extend("./layout")}}
 
 {{#block("body")}}
-    <div class="functional">
-        <input id='logout' type='button' value='登出'/>
-        <input id='previous' type='button' value='返回'/>
-    </div>
     <div class="content">
         <table class="tb">
             {{parse("./table.xtpl",{keys:keys,values:values})}}
         </table>
     </div>
+    <div class="foot">
+        <input class='func-btn' id='logout' type='button' value='登出'/>
+        <input class="func-btn" id='previous' type='button' value='返回'/>
+    </div>
+
     <script src="/javascripts/home.js"></script>
 {{/block}}

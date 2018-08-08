@@ -20,7 +20,7 @@ function TransData(status, infoORdata) {
 }
 
 router.get('/', function (req, res, next) {
-    res.render('index.xtpl', {title: 'Mysql browser'});
+    res.render('index.xtpl');
 });
 router.post('/', function (req, res) {
 

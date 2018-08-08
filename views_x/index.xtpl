@@ -1,27 +1,22 @@
 {{extend("./layout")}}
 
 {{#block("body")}}
-    <div class="head">
-        <h1>{{title}}</h1>
-        <p>Welcome to {{title}}</p>
-    </div>
     <div class="content">
-        <div class="content-header">Login to<span>mysql</span></div>
+        <div class="content-header">Login to <span>mysql</span></div>
         <ul>
             <li>
-                <div class="text">
-                    <span class="user"></span>
-                    <input type="text" placeholder="input username">
+                <div>
+                    <input class="text" type="text" placeholder="username">
                 </div>
             </li>
             <li>
-                <div class="text">
-                    <span class="passwd"></span>
-                    <input type="password" placeholder="input password">
+                <div>
+                    <input class="text" type="password" placeholder="password">
                 </div>
             </li>
+            <p class="tips"></p>
             <li>
-                <input id="btn1" type="button" value="log in">
+                <input class="button-login" id="btn1" type="button" value="log in">
             </li>
         </ul>
     </div>
