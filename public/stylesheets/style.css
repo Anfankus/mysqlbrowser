@@ -1,30 +1,65 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 45px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0 auto;
+  /*padding:  2em;*/
+  border: 20px  skyblue;
+  background: #f2f2f2;
 }
-
+.head{
+  background: #ffffff;
+}
 h1 {
   color: #00B7FF;
+  text-align: center;
+  border: 1px solid #b7b7b7;
+  margin: 0;
+  padding: 0.5em;
 }
-
-div.content-header span{
-  font-size: large;
+ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+.content-header{
+  padding-left: 0.4em;
+}
+.content-header span{
+  font-size: larger;
   color: green;
 }
-.tb table {
+.content{
+  padding:1em;
+  overflow: auto;
+}
+.text {
+  font-size: 1.3em;
+  border:2px solid #cccccc ;
+  border-radius: 15px;
+  padding: 0.5em;
+  margin-bottom: 0.6em;
+  width:93%;
+}
+
+.button-login{
+   font-size: 1.2em;
+   border: 1px solid black;
+   text-align: center;
+   width: 100%;
+   border-radius: 40px;
+   padding: 0.6em;
+   color: #FFFFFF;
+   background: #00B7FF;
+   margin-top: 1em;
+ }
+.tips{
+  margin: 0;
+  font-size: 0.8em;
+  padding-left: 0.6em;
+  color: #ac0202;
+}
+
+.tb {
   width:100%;
-  margin:15px 0
-}
-.tb th {
-  background-color:#00BFFF;
-  color:#FFFFFF
-}
-.tb td{
-    cursor: pointer;
-    border: 1px solid transparent;
-}
-.tb td:hover{
-    border: 1px solid #202a7c;
+  margin:15px auto
 }
 .tb,.tb th,.tb td{
   font-size:0.95em;
@@ -33,9 +68,38 @@ div.content-header span{
   border:1px solid #6ddafe;
   border-collapse:collapse
 }
+.tb th {
+  background-color: #003749;
+  color:#FFFFFF
+}
+.tb td{
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.tb td:hover{
+  border: 1px solid #202a7c;
+}
 .tb tr:nth-child(odd){
   background-color:#aae9fe;
 }
 .tb tr:nth-child(even){
   background-color:#fdfdfd;
+}
+.tb .tb-unit{
+  padding:1.5em;
+}
+.foot{
+    position: fixed;
+    bottom: -10px;
+    width: 100%;
+    border: 2px solid #dadada;
+    background:#fdfdfd ;
+}
+.func-btn{
+    font-size: 1.5em;
+    padding: 0.2em 1.5em 0.2em 1.5em;
+    margin: 0.3em 1em 0.3em 1em;
+    background: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 60px;
 }

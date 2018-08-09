@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');
-const pug=require('pug');
+const xtem=require("xtpl");
 
 let TransData=require('./index').TransData;
 /*
@@ -13,7 +13,7 @@ function result2data(keys,values,results){
     for(let i of results){
         let temp=[];
         for(let j in i) {
-            if(flag) keys.push(j);
+            if(flag) keys.push(j.toUpperCase());
             temp.push(i[j]);
         }
         flag=false;
@@ -23,7 +23,6 @@ function result2data(keys,values,results){
 }
 
 let conn;
-const compiledTable=pug.compileFile('views/table.pug');
 
 router.get('/',function(req,res,next){
     let config=req.session.conf;
@@ -41,7 +40,7 @@ router.get('/',function(req,res,next){
             let Keys=[];
             let Values=[];
             result2data(Keys,Values,results);
-            res.render('home.pug',{keys:Keys,values:Values});
+            res.render('home.xtpl',{keys:Keys,values:Values});
         });
     }
     else{
@@ -87,14 +86,10 @@ router.post('/query',function(req,res){
             let Keys=[];
             let Values=[];
             result2data(Keys,Values,result);
-            res.end(
-                JSON.stringify(
-                    new TransData(
-                        0,compiledTable({
-                            keys:Keys,
-                            values:Values
-            }))));
-        })
+            xtem.renderFile("./views_x/table.xtpl",{keys:Keys,values:Values},function(err,data){
+                res.end(JSON.stringify(new TransData(0,data)));
+            })
+        });
     }//if(req.session.conf&&conn)
     else{
         res.end(JSON.stringify(new TransData(3)));

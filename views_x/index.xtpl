@@ -1,0 +1,24 @@
+{{extend("./layout")}}
+
+{{#block("body")}}
+    <div class="content">
+        <div class="content-header">Login to <span>mysql</span></div>
+        <ul>
+            <li>
+                <div>
+                    <input class="text" type="text" placeholder="username">
+                </div>
+            </li>
+            <li>
+                <div>
+                    <input class="text" type="password" placeholder="password">
+                </div>
+            </li>
+            <p class="tips"></p>
+            <li>
+                <input class="button-login" id="btn1" type="button" value="log in">
+            </li>
+        </ul>
+    </div>
+    <script src="/javascripts/init.js"></script>
+{{/block}}
