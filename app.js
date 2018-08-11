@@ -31,10 +31,11 @@ app.use(session({
 
 app.get('/',function (req,rep,next) {
     if(req.originalUrl==='/') {
-
         rep.redirect('/login');
     }
-    next();
+    else{
+        next();
+    }
 });
 app.use('/login', indexRouter);
 app.use('/home',homeRouter);
