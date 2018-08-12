@@ -65,3 +65,4 @@ fabric.properties
 node_modules/
 #public/images/
 #public/javascripts/
+*.log

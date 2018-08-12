@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const session=require('express-session');
+const fs=require('fs');
 
 const indexRouter = require('./routes/index.js').Router;
 const homeRouter=require('./routes/home.js');
@@ -14,7 +15,8 @@ const app = express();
 app.set('views', path.join(__dirname, 'views_x'));
 app.set('view engine', 'xtpl');
 
-app.use(logger('dev'));
+let loggerfile=fs.createWriteStream('./logs/access.log',{flags:'a',encoding:'utf-8'});
+app.use(logger(':date[clf] :remote-addr :method :url [:status] :response-time ms',{stream:loggerfile}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
