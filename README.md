@@ -1,4 +1,4 @@
-## Mysql-in-web
+## Mysqlbrowser
 ### 简介 
 node.js (v10.7.0)搭建的web服务器，用于移动端在局域网内查看主机端的mysql数据库
 ### 本地运行 
